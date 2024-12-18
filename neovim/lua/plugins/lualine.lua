@@ -44,7 +44,7 @@ return {
 
     lualine.setup {
       options = {
-        theme = 'modus-vivendi',
+        theme = 'nord',
         component_separators = { left = '│', right = '│' },
         section_separators = { left = '', right = '' },
         globalstatus = true,
