@@ -18,7 +18,7 @@ vim.g.maplocalleader = "\\"
 
 -- Загрузка плагинов
 require("lazy").setup("plugins", {
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "nord" } },
   checker = {
     enabled = true, 
     notify = false,
