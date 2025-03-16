@@ -43,11 +43,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
--- Маппинги
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>F', ':Telescope live_grep<CR>', {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>fF', ':Telescope live_grep<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>")
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
