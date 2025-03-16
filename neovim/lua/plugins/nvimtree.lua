@@ -10,6 +10,20 @@ return {
         view = {
             side="right",
         },
+        filters = {
+            dotfiles = false, -- Показывать скрытые файлы
+            git_ignored = false, -- Показывать файлы, игнорируемые Git
+        },
+        renderer = {
+            icons = {
+              show = {
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
+              },
+            },
+        },
     }
   end,
 }
