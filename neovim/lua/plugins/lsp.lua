@@ -29,6 +29,9 @@ return {
       lspconfig.rust_analyzer.setup{}
       lspconfig.clangd.setup{}
       lspconfig.lua_ls.setup{}
+      lspconfig.vimls.setup{}
+      lspconfig.dockerls.setup{}
+      lspconfig.docker_compose_language_service.setup{}
       -- Глобальные маппинги для LSP
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})

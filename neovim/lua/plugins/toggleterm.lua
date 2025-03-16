@@ -17,7 +17,6 @@ return {
                 -- Включить закрытие терминала при выходе из Neovim
                 close_on_exit = true,
             })
-            
             -- Определение функции для установки keymaps в терминальном режиме
             function _G.set_terminal_keymaps()
                 local opts = {buffer = 0}

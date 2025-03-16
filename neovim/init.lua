@@ -6,21 +6,21 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", 
+    "--branch=stable",
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Базовые настройки Neovim
-vim.g.mapleader = " " 
-vim.g.maplocalleader = "\\" 
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- Загрузка плагинов
 require("lazy").setup("plugins", {
   install = { colorscheme = { "nord" } },
   checker = {
-    enabled = true, 
+    enabled = true,
     notify = false,
   },
   change_detection = {
@@ -33,6 +33,7 @@ require("lazy").setup("plugins", {
 -- Полное отключение встроенных уведомлений о режиме
 vim.opt.showmode = false
 vim.opt.ruler = false
+vim.cmd("colorscheme github_dark")
 
 -- Базовые настройки Python
 vim.opt.number = true
@@ -47,7 +48,8 @@ vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent 
 vim.keymap.set('n', '<leader>F', ':Telescope live_grep<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>b', ':Telescope buffers<CR>', {noremap = true, silent = true})
-vim.keymap.set('v', '<', '<gv')  
+vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>")
+vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '<Esc>', function()
   -- Если есть подсвеченный поиск - убираем

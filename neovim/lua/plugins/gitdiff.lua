@@ -8,11 +8,11 @@ return {
   },
   config = function()
     require('diffview').setup({
-      diff_binaries = false,    
-      enhanced_diff_hl = false, 
-      git_cmd = { "git" },      
-      use_icons = true,         
-      show_help_hints = true,   
+      diff_binaries = false,
+      enhanced_diff_hl = false,
+      git_cmd = { "git" },
+      use_icons = true,
+      show_help_hints = true,
       watch_view = {
         layout = "lean_left",
         win_options = {
