@@ -86,7 +86,13 @@ return {
           'location'
         }
       },
-      extensions = {
+      tabline = {
+          lualine_a = {'buffers'},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {'tabs'}
+        },
+    extensions = {
         'nvim-tree',
         'quickfix',
         'toggleterm'

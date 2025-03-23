@@ -2,9 +2,9 @@ return {
   'sindrets/diffview.nvim',
   dependencies = 'nvim-lua/plenary.nvim',
   keys = {
-    { '<leader>dv', ':DiffviewOpen<CR>', desc = 'Open Diffview' },
-    { '<leader>dc', ':DiffviewClose<CR>', desc = 'Close Diffview' },
-    { '<leader>dh', ':DiffviewFileHistory<CR>', desc = 'File History' }
+    { '<leader>Dv', ':DiffviewOpen<CR>', desc = 'Open Diffview' },
+    { '<leader>Dc', ':DiffviewClose<CR>', desc = 'Close Diffview' },
+    { '<leader>Dh', ':DiffviewFileHistory<CR>', desc = 'File History' }
   },
   config = function()
     require('diffview').setup({
