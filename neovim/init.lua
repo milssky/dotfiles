@@ -86,3 +86,14 @@ end, { noremap = true, silent = true })
 -- Перемещение строк в Visual mode
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")  -- Переместить выделенный блок вниз
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")  -- Переместить выделенный блок вверх
+
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,         -- Показывает значки на полях
+  underline = true,     -- Подчёркивает проблемные места
+  update_in_insert = false,  -- Не обновлять диагностику в режиме вставки
+  severity_sort = true, -- Сортировать ошибки по серьёзности
+})
+vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable=false})]]
+
