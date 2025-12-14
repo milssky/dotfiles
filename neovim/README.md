@@ -23,11 +23,12 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Normal | `<leader>w` | Close buffer with modified check (`lua/keymaps.lua`) |
 | Normal | `<leader>ft` | Workspace symbol search (guarded `telescope.lsp_dynamic_workspace_symbols`, `lua/keymaps.lua`) |
 | Normal | `<leader>[` / `<leader>]` | Previous/next buffer (`lua/keymaps.lua`) |
+| Normal | `<leader>vs` / `<leader>vc` | Select / reactivate cached virtualenv (`lua/plugins/python.lua`) |
 | Normal | `<leader>u` | Open Telescope Undo history (`lua/plugins/undo.lua`) |
 | Normal | `<leader>a` | Toggle Aerial outline (`lua/plugins/outline.lua`) |
 | Normal | `<leader>{` / `<leader>}` | Jump to previous/next symbol in Aerial (`lua/plugins/outline.lua`) |
-| Normal | `<leader>/` | Toggle comment for current line (Comment.nvim) |
-| Visual | `<leader>/` | Toggle comment for selection (Comment.nvim) |
+| Normal | `<leader>/` / `<leader>?` | Comment line / block (Comment.nvim) |
+| Visual | `<leader>/` / `<leader>?` | Comment selection / block (Comment.nvim) |
 | Normal | `gd`, `K`, `<leader>ca` | LSP definition, hover docs, code actions (`lua/plugins/lsp.lua`) |
 | Normal | `<leader>r` | Rename symbol via `renamer.nvim` (`lua/plugins/rename.lua`) |
 | Normal | `<leader>?` | Buffer-local which-key popup (`lua/plugins/keymap.lua`) |
