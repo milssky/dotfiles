@@ -23,7 +23,7 @@ function M.setup()
   map('n', '<leader>fF', ':Telescope live_grep<CR>', opts)
   map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
   map('n', '<leader>d', ':Telescope buffers<CR>', opts)
-  map('n', '<leader>ft', workspace_symbols, opts)
+  map('n', '<leader>t', workspace_symbols, opts)
 
   -- Buffer navigation/management
   map('n', '<leader>[', ':bprevious<CR>', opts)
