@@ -1,4 +1,3 @@
--- Установка Lazy.nvim!
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,13 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Базовые настройки Neovim
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Загрузка плагинов
 require("lazy").setup("plugins", {
-  install = { colorscheme = { "nord" } },
+  install = { colorscheme = { "gruvbox" } },
   checker = {
     enabled = true,
     notify = false,
@@ -28,12 +25,9 @@ require("lazy").setup("plugins", {
   },
 })
 
--- Основные настройки
--- vim.cmd("colorscheme habamax")
--- Полное отключение встроенных уведомлений о режиме
 vim.opt.showmode = false
 vim.opt.ruler = false
-vim.cmd("colorscheme github_dark")
+vim.cmd("colorscheme gruvbox")
 
 -- Базовые настройки Python
 vim.opt.number = true
@@ -46,8 +40,24 @@ vim.opt.smartindent = true
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>fF', ':Telescope live_grep<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>fp", ":Telescope projects<CR>")
+vim.keymap.set('n', '<leader>d', ':Telescope buffers<CR>', {noremap = true, silent = true})
+
+local function workspace_symbols()
+  local clients = vim.lsp.get_clients({ bufnr = 0 })
+  if not clients or vim.tbl_isempty(clients) then
+    vim.notify("LSP Deactivated", vim.log.levels.WARN, { title = "Workspace Symbols" })
+    return
+  end
+
+  local ok, telescope = pcall(require, 'telescope.builtin')
+  if not ok then
+    vim.notify("Telescope is not installed", vim.log.levels.ERROR, { title = "Workspace Symbols" })
+    return
+  end
+  telescope.lsp_dynamic_workspace_symbols()
+end
+
+vim.keymap.set('n', '<leader>ft', workspace_symbols, { noremap = true, silent = true })
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '<Esc>', function()
@@ -71,7 +81,7 @@ end, { expr = true, noremap = true, silent = true })
 -- Перемещение по буферам
 vim.keymap.set('n', '<leader>[', ':bprevious<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>]', ':bnext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>d', function()
+vim.keymap.set('n', '<leader>w', function()
   -- Проверяем, есть ли несохраненные изменения
   if vim.bo.modified then
     local choice = vim.fn.confirm("Buffer has unsaved changes. Close anyway?", "&Yes\n&No", 2)
@@ -96,4 +106,3 @@ vim.diagnostic.config({
   severity_sort = true, -- Сортировать ошибки по серьёзности
 })
 vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable=false})]]
-

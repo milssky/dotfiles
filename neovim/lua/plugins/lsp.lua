@@ -12,11 +12,21 @@ return {
         ensure_installed = { 'pyright' }
       })
 
-      local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      lspconfig.pyright.setup { 
-        capabilities = capabilities,
+      local function enable(server, opts)
+        opts = opts or {}
+        opts.capabilities = vim.tbl_deep_extend(
+          "force",
+          {},
+          capabilities,
+          opts.capabilities or {}
+        )
+        vim.lsp.config(server, opts)
+        vim.lsp.enable(server)
+      end
+
+      enable('pyright', {
         settings = {
           python = {
             analysis = {
@@ -24,14 +34,18 @@ return {
             }
           }
         }
-      }
+      })
 
-      lspconfig.rust_analyzer.setup{}
-      lspconfig.clangd.setup{}
-      lspconfig.lua_ls.setup{}
-      lspconfig.vimls.setup{}
-      lspconfig.dockerls.setup{}
-      lspconfig.docker_compose_language_service.setup{}
+      for _, server in ipairs({
+        'rust_analyzer',
+        'clangd',
+        'lua_ls',
+        'vimls',
+        'dockerls',
+        'docker_compose_language_service',
+      }) do
+        enable(server)
+      end
       -- Глобальные маппинги для LSP
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})

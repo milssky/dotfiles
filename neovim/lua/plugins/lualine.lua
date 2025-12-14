@@ -28,6 +28,9 @@ return {
     local function diagnostics_count()
       local errors = #vim.diagnostic.get(0, {severity = vim.diagnostic.severity.ERROR})
       local warnings = #vim.diagnostic.get(0, {severity = vim.diagnostic.severity.WARN})
+      if errors == 0 and warnings == 0 then
+        return ''
+      end
       return string.format("E:%d W:%d", errors, warnings)
     end
 
@@ -86,12 +89,6 @@ return {
           'location'
         }
       },
-      tabline = {
-          lualine_a = {'buffers'},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {'tabs'}
-        },
     extensions = {
         'nvim-tree',
         'quickfix',
