@@ -41,7 +41,7 @@ require("keymaps").setup()
 
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,         -- Показывает значки на полях
+  signs = false,         -- Показывает значки на полях
   underline = true,     -- Подчёркивает проблемные места
   update_in_insert = false,  -- Не обновлять диагностику в режиме вставки
   severity_sort = true, -- Сортировать ошибки по серьёзности
