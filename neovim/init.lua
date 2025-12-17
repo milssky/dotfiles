@@ -37,7 +37,6 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 require("keymaps").setup()
-require("autosave").setup()
 
 vim.diagnostic.config({
   virtual_text = true,
