@@ -31,6 +31,7 @@ vim.cmd("colorscheme gruvbox")
 
 -- Базовые настройки Python
 vim.opt.number = true
+vim.opt.signcolumn = "yes"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
