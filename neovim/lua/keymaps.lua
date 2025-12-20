@@ -45,11 +45,16 @@ function M.setup()
   map('v', 'J', ":m '>+1<CR>gv=gv")
   map('v', 'K', ":m '<-2<CR>gv=gv")
 
-  -- Clear search / close popups on Esc
-  map('n', '<Esc>', function()
-    if vim.v.hlsearch == 1 then
-      vim.cmd('nohlsearch')
+  -- Clear search highlight / close floating windows without hijacking <Esc> mappings
+  local esc_ns = vim.api.nvim_create_namespace('clear_hl_on_esc')
+  vim.on_key(function(key)
+    if key ~= vim.api.nvim_replace_termcodes('<Esc>', true, false, true) then
       return
+    end
+
+    local mode = vim.fn.mode()
+    if vim.v.hlsearch == 1 and mode == 'n' then
+      vim.cmd('nohlsearch')
     end
 
     for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -58,9 +63,7 @@ function M.setup()
         vim.api.nvim_win_close(win, false)
       end
     end
-
-    return '<Esc>'
-  end, { expr = true, noremap = true, silent = true })
+  end, esc_ns)
 end
 
 return M
