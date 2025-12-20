@@ -49,8 +49,8 @@ return {
             },
         },
         filters = {
-            dotfiles = true,
-            git_ignored = true,
+            dotfiles = false,
+            git_ignored = false,
         },
         renderer = {
             icons = {
