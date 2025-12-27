@@ -53,6 +53,9 @@ function M.setup()
     end
 
     local mode = vim.fn.mode()
+    if mode == 't' or vim.bo.filetype == 'lazygit' then
+      return
+    end
     if vim.v.hlsearch == 1 and mode == 'n' then
       vim.cmd('nohlsearch')
     end
