@@ -26,6 +26,8 @@ function M.setup()
   map('n', '<leader>t', workspace_symbols, opts)
   map('n', '<leader>W', '<C-w>w', opts)
   map('n', '<leader>P', '<C-w>p', opts)
+  map('n', '<leader>Q', ':quit<CR>', opts)
+  map('n', '<leader>S', ':write<CR>', opts)
 
   -- Buffer navigation/management
   map('n', '<leader>[', ':bprevious<CR>', opts)
