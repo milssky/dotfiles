@@ -1,4 +1,4 @@
-# Neovim Config
+# Neovim Config =)
 
 Custom Neovim setup powered by [lazy.nvim](https://github.com/folke/lazy.nvim).  The config focuses on a light UI, floating file tree, solid LSP experience, and a few focused plugins for day-to-day development (mainly Python, Rust, and C/C++).
 
