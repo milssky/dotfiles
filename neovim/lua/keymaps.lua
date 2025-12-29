@@ -24,6 +24,8 @@ function M.setup()
   map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
   map('n', '<leader>d', ':Telescope buffers<CR>', opts)
   map('n', '<leader>t', workspace_symbols, opts)
+  map('n', '<leader>W', '<C-w>w', opts)
+  map('n', '<leader>P', '<C-w>p', opts)
 
   -- Buffer navigation/management
   map('n', '<leader>[', ':bprevious<CR>', opts)

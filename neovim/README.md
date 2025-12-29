@@ -22,6 +22,8 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Normal | `<leader>d` | Telescope buffer list (`lua/keymaps.lua`) |
 | Normal | `<leader>w` | Close buffer with modified check (`lua/keymaps.lua`) |
 | Normal | `<leader>t` | Workspace symbol search (guarded `telescope.lsp_dynamic_workspace_symbols`, `lua/keymaps.lua`) |
+| Normal | `<leader>W` | Cycle through windows (`lua/keymaps.lua`) |
+| Normal | `<leader>P` | Jump to previous window (`lua/keymaps.lua`) |
 | Normal | `<leader>[` / `<leader>]` | Previous/next buffer (`lua/keymaps.lua`) |
 | Normal | `<leader>vs` / `<leader>vc` | Select / reactivate cached virtualenv (`lua/plugins/python.lua`) |
 | Normal | `<leader>u` | Open Telescope Undo history (`lua/plugins/undo.lua`) |
