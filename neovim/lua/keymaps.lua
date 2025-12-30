@@ -28,6 +28,7 @@ function M.setup()
   map('n', '<leader>P', '<C-w>p', opts)
   map('n', '<leader>Q', ':quit<CR>', opts)
   map('n', '<leader>S', ':write<CR>', opts)
+  map({'n', 'v', 'x'}, '<leader>y', '"+y<CR>', opts)
 
   -- Buffer navigation/management
   map('n', '<leader>[', ':bprevious<CR>', opts)
