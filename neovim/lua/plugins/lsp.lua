@@ -4,7 +4,7 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      'hrsh7th/cmp-nvim-lsp',
+      'saghen/blink.cmp',
     },
     config = function()
       require('mason').setup()
@@ -12,7 +12,7 @@ return {
         ensure_installed = { 'pyright' }
       })
 
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       local function enable(server, opts)
         opts = opts or {}
@@ -46,11 +46,9 @@ return {
       }) do
         enable(server)
       end
-      -- Глобальные маппинги для LSP
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-      -- vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
     end
   }
 }
