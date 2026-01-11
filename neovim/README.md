@@ -6,8 +6,8 @@ Custom Neovim setup powered by [lazy.nvim](https://github.com/folke/lazy.nvim). 
 
 - **Theme & UI**: `gruvbox.nvim`, `lualine.nvim` with a single minimal statusline, `vim-illuminate` for repeated word highlights.
 - **Navigation**: Floating `nvim-tree` file explorer, `telescope.nvim` for fuzzy finding, `aerial.nvim` (via `outline.lua`) for symbol outline, `diffview.nvim` for Git history/diffs.
-- **Editing**: `nvim-cmp` with LuaSnip snippets, `Comment.nvim` (+ Treesitter context) for contextual comments, `toggleterm.nvim` for floating terminals, `telescope-undo` integration.
-- **LSP & Diagnostics**: Built-in LSP configured through `vim.lsp.config` with pyright, rust-analyzer, clangd, lua-language-server, vimls, docker servers; `lsp-progress` + lualine for status feedback; quick LSP keymaps out of the box.
+- **Editing**: `blink.cmp` for modern, fast completion, `Comment.nvim` (+ Treesitter context) for contextual comments, `toggleterm.nvim` for floating terminals, `telescope-undo` integration.
+- **LSP & Diagnostics**: Built-in LSP configured through `vim.lsp.config` (Neovim 0.11+ style) with pyright, rust-analyzer, clangd, lua-language-server, vimls, docker servers; `lsp-progress` + lualine for status feedback; quick LSP keymaps out of the box.
 - **Python tooling**: `venv-selector.nvim` to pick and auto-activate virtualenvs, convenient Poetry path integration, direct bindings for cached env reuse.
 - **Quality of life**: `which-key.nvim`, `nvim-tree` icons, `renamer.nvim`, `trouble.nvim`, Treesitter highlighting, and various visual tweaks (buffer close prompts, floating window escape helper).
 
@@ -32,6 +32,9 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Normal | `<leader>/` / `<leader>?` | Comment line / block (Comment.nvim) |
 | Visual | `<leader>/` / `<leader>?` | Comment selection / block (Comment.nvim) |
 | Normal | `gd`, `K`, `<leader>ca` | LSP definition, hover docs, code actions (`lua/plugins/lsp.lua`) |
+| Insert | `<C-j>` | Show completion menu / toggle documentation (`blink.cmp`) |
+| Insert | `<Tab>` / `<S-Tab>` | Next / Previous item or snippet jump (`blink.cmp`) |
+| Insert | `<CR>` | Accept completion (`blink.cmp`) |
 | Normal | `<leader>r` | Rename symbol via `renamer.nvim` (`lua/plugins/rename.lua`) |
 | Normal | `<leader>?` | Buffer-local which-key popup (`lua/plugins/keymap.lua`) |
 | Normal | `<leader>Dv`, `<leader>Dc`, `<leader>Dh` | Diffview open/close/file history (`lua/plugins/gitdiff.lua`) |
