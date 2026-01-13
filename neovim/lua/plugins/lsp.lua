@@ -9,7 +9,15 @@ return {
     config = function()
       require('mason').setup()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'pyright' }
+        ensure_installed = {
+          'pyright',
+          'rust_analyzer',
+          'clangd',
+          'lua_ls',
+          'vimls',
+          'dockerls',
+          'docker_compose_language_service',
+        }
       })
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
