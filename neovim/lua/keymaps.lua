@@ -26,6 +26,7 @@ function M.setup()
   map('n', '<leader>t', workspace_symbols, opts)
   map('n', '<leader>W', '<C-w>w', opts)
   map('n', '<leader>P', '<C-w>p', opts)
+  map('n', '<leader>V', ':vsplit<CR>', opts)
   map('n', '<leader>Q', ':quit<CR>', opts)
   map('n', '<leader>S', ':write<CR>', opts)
   map({'n', 'v', 'x'}, '<leader>y', '"+y<CR>', opts)
@@ -50,28 +51,21 @@ function M.setup()
   map('v', 'J', ":m '>+1<CR>gv=gv")
   map('v', 'K', ":m '<-2<CR>gv=gv")
 
-  -- Clear search highlight / close floating windows without hijacking <Esc> mappings
-  local esc_ns = vim.api.nvim_create_namespace('clear_hl_on_esc')
-  vim.on_key(function(key)
-    if key ~= vim.api.nvim_replace_termcodes('<Esc>', true, false, true) then
-      return
-    end
-
-    local mode = vim.fn.mode()
-    if mode == 't' or vim.bo.filetype == 'lazygit' then
-      return
-    end
-    if vim.v.hlsearch == 1 and mode == 'n' then
+  -- Custom <Esc> mapping to clear search highlight and close floating windows
+  map('n', '<Esc>', function()
+    -- Clear search highlight
+    if vim.v.hlsearch == 1 then
       vim.cmd('nohlsearch')
     end
 
+    -- Close floating windows
     for _, win in ipairs(vim.api.nvim_list_wins()) do
       local config = vim.api.nvim_win_get_config(win)
-      if config.relative ~= "" then
+      if config.relative ~= "" and vim.api.nvim_win_is_valid(win) then
         vim.api.nvim_win_close(win, false)
       end
     end
-  end, esc_ns)
+  end, { noremap = true, silent = true })
 end
 
 return M
