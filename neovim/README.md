@@ -44,7 +44,7 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Visual | `J` / `K` | Move highlighted block down/up (`lua/keymaps.lua`) |
 | Visual | `<` / `>` | Shift indent while keeping selection (`lua/keymaps.lua`) |
 
-Other tweaks:
+Other Tweaks:
 
 - Pressing `<Esc>` clears search highlights and closes floating popups (`lua/keymaps.lua`).
 - Telescope workspace search refuses to run when no LSP client is attached, preventing noisy errors (`lua/keymaps.lua`).
