@@ -43,9 +43,12 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Terminal | `<Esc>` / `<C-h/j/k/l>` | Leave terminal / move between splits from terminal (`lua/plugins/toggleterm.lua`) |
 | Visual | `J` / `K` | Move highlighted block down/up (`lua/keymaps.lua`) |
 | Visual | `<` / `>` | Shift indent while keeping selection (`lua/keymaps.lua`) |
+| Visual | `<Cmd-c>` / `<Cmd-x>` | Copy / Cut to system clipboard (`lua/keymaps.lua`) |
+| All | `<Cmd-v>` | Paste from system clipboard (`lua/keymaps.lua`) |
 
 Other Tweaks:
 
+- **System Clipboard**: `clipboard="unnamedplus"` is enabled for seamless integration.
 - Pressing `<Esc>` clears search highlights and closes floating popups (`lua/keymaps.lua`).
 - Telescope workspace search refuses to run when no LSP client is attached, preventing noisy errors (`lua/keymaps.lua`).
 - Terminal buffers automatically inherit navigation mappings for seamless pane movement (`toggleterm.lua`).

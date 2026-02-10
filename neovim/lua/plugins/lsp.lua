@@ -17,6 +17,7 @@ return {
           'vimls',
           'dockerls',
           'docker_compose_language_service',
+          'ts_ls',
         }
       })
 
@@ -51,6 +52,7 @@ return {
         'vimls',
         'dockerls',
         'docker_compose_language_service',
+        'ts_ls',
       }) do
         enable(server)
       end

@@ -31,6 +31,13 @@ function M.setup()
   map('n', '<leader>S', ':write<CR>', opts)
   map({'n', 'v', 'x'}, '<leader>y', '"+y<CR>', opts)
 
+  -- System Clipboard
+  map({'v', 'x'}, '<D-c>', '"+y', opts)
+  map({'v', 'x'}, '<D-x>', '"+d', opts)
+  map({'n', 'v', 'x'}, '<D-v>', '"+p', opts)
+  map('i', '<D-v>', '<C-r>+', opts)
+  map('c', '<D-v>', '<C-r>+', { noremap = true })
+
   -- Buffer navigation/management
   map('n', '<leader>[', ':bprevious<CR>', opts)
   map('n', '<leader>]', ':bnext<CR>', opts)
