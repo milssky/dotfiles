@@ -36,7 +36,7 @@ Each plugin’s config lives in `lua/plugins/*.lua`, so it’s easy to tweak ind
 | Insert | `<C-j>` | Show completion menu / toggle documentation (`blink.cmp`) |
 | Insert | `<Tab>` / `<S-Tab>` | Next / Previous item or snippet jump (`blink.cmp`) |
 | Insert | `<CR>` | Accept completion (`blink.cmp`) |
-| Normal | `<leader>r` | Rename symbol via `renamer.nvim` (`lua/plugins/rename.lua`) |
+| Normal | `<leader>r` | LSP rename across workspace + auto-save affected files (`lua/plugins/lsp.lua`) |
 | Normal | `<leader>?` | Buffer-local which-key popup (`lua/plugins/keymap.lua`) |
 | Normal | `<leader>Dv`, `<leader>Dc`, `<leader>Dh` | Diffview open/close/file history (`lua/plugins/gitdiff.lua`) |
 | Terminal | `<C-\>` | Toggle floating terminal (`lua/plugins/toggleterm.lua`) |
