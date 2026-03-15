@@ -1,0 +1,85 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-\\": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space": "zed::NoAction",
+      "e": "workspace::CloseActiveDock",
+      "space e": "workspace::CloseActiveDock",
+      "escape": "workspace::CloseActiveDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space": "zed::NoAction",
+      "space e": "project_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+      "space f shift-f": "workspace::NewSearch",
+      "space d": "tab_switcher::Toggle",
+      "space t": "project_symbols::Toggle",
+      "space shift-w": "workspace::ActivateNextPane",
+      "space shift-p": "workspace::ActivatePreviousPane",
+      "space shift-v": "pane::SplitRight",
+      "space shift-q": "workspace::CloseWindow",
+      "space shift-s": "workspace::Save",
+      "space [": "pane::ActivatePreviousItem",
+      "space ]": "pane::ActivateNextItem",
+      "space w": "pane::CloseActiveItem",
+      "space y": "editor::Copy",
+      "space a": "outline_panel::ToggleFocus",
+      "space /": "editor::ToggleComments",
+      "space c a": "editor::ToggleCodeActions",
+      "space r": "editor::Rename",
+      "space v s": "toolchain::Select",
+      "space v c": "toolchain::Select",
+      "space l g": "git_panel::ToggleFocus",
+      "g d": "editor::GoToDefinition",
+      "shift-k": "editor::Hover"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "space /": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual_line && !menu",
+    "bindings": {
+      "space /": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual_block && !menu",
+    "bindings": {
+      "space /": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space": "zed::NoAction",
+      "space e": "project_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle"
+    }
+  }
+]

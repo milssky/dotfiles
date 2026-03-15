@@ -1,0 +1,64 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "use_system_window_tabs": false,
+  "gutter": {
+    "breakpoints": false
+  },
+  "which_key": {
+    "enabled": true,
+    "delay_ms": 300
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "debugger": {
+    "button": false
+  },
+  "show_edit_predictions": false,
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff", "!ty", "!pyrefly", "!basedpyright", "!pylsp", "..."]
+    }
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false,
+    "selections_menu": false,
+    "agent_review": false,
+    "code_actions": false
+  },
+  "vim_mode": true,
+  "agent_buffer_font_size": 15.0,
+  "ui_font_family": ".SystemUIFont",
+  "buffer_line_height": "standard",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "autosave": "on_focus_change",
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16.0,
+  "buffer_font_size": 15,
+  "theme": "Gruvbox Dark"
+}
