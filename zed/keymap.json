@@ -9,22 +9,22 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-\\": "terminal_panel::ToggleFocus"
-    }
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+    },
   },
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "space": "zed::NoAction",
+      "space": null,
       "e": "workspace::CloseActiveDock",
       "space e": "workspace::CloseActiveDock",
-      "escape": "workspace::CloseActiveDock"
-    }
+      "escape": "workspace::CloseActiveDock",
+    },
   },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
-      "space": "zed::NoAction",
+      "space": null,
       "space e": "project_panel::ToggleFocus",
       "space f f": "file_finder::Toggle",
       "space f shift-f": "workspace::NewSearch",
@@ -47,39 +47,45 @@
       "space v c": "toolchain::Select",
       "space l g": "git_panel::ToggleFocus",
       "g d": "editor::GoToDefinition",
-      "shift-k": "editor::Hover"
-    }
+      "shift-k": "editor::Hover",
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
-      "space /": "editor::ToggleComments"
-    }
+      "space /": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
   },
   {
     "context": "Editor && vim_mode == visual_line && !menu",
     "bindings": {
-      "space /": "editor::ToggleComments"
-    }
+      "space /": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
   },
   {
     "context": "Editor && vim_mode == visual_block && !menu",
     "bindings": {
-      "space /": "editor::ToggleComments"
-    }
+      "space /": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+    },
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       // "j k": "vim::NormalBefore"
-    }
+    },
   },
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
-      "space": "zed::NoAction",
+      "space": null,
       "space e": "project_panel::ToggleFocus",
-      "space f f": "file_finder::Toggle"
-    }
-  }
+      "space f f": "file_finder::Toggle",
+    },
+  },
 ]
