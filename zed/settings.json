@@ -9,39 +9,50 @@
 {
   "use_system_window_tabs": false,
   "gutter": {
-    "breakpoints": false
+    "folds": false,
+    "min_line_number_digits": 1,
+    "runnables": false,
+    "breakpoints": false,
   },
   "which_key": {
     "enabled": true,
-    "delay_ms": 300
+    "delay_ms": 300,
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "debugger": {
-    "button": false
+    "button": false,
   },
   "show_edit_predictions": false,
   "languages": {
     "Python": {
-      "language_servers": ["pyright", "ruff", "!ty", "!pyrefly", "!basedpyright", "!pylsp", "..."]
-    }
+      "language_servers": [
+        "pyright",
+        "ruff",
+        "!ty",
+        "!pyrefly",
+        "!basedpyright",
+        "!pylsp",
+        "...",
+      ],
+    },
   },
   "tab_bar": {
-    "show": false
+    "show": false,
   },
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": false,
     "selections_menu": false,
     "agent_review": false,
-    "code_actions": false
+    "code_actions": false,
   },
   "vim_mode": true,
   "agent_buffer_font_size": 15.0,
@@ -50,15 +61,17 @@
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "autosave": "on_focus_change",
   "agent_servers": {
     "codex-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "ui_font_size": 16.0,
   "buffer_font_size": 15,
-  "theme": "Gruvbox Dark"
+  "theme": "Min Dark (Solid)",
+  "show_wrap_guides": true,
+  "wrap_guides": [80],
 }
