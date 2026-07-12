@@ -30,11 +30,14 @@ require("lazy").setup("plugins", {
 
 vim.opt.showmode = false
 vim.opt.ruler = false
+vim.opt.cmdheight = 0
 vim.cmd("colorscheme gruvbox")
 
 -- Базовые настройки Python
 vim.opt.number = true
-vim.opt.signcolumn = "yes"
+vim.opt.numberwidth = 2
+vim.opt.signcolumn = "yes:1"
+vim.opt.foldcolumn = "0"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
