@@ -51,4 +51,3 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
-vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focusable=false})]]

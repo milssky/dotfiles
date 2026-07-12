@@ -19,7 +19,6 @@ function M.setup()
   local map = vim.keymap.set
   local opts = { noremap = true, silent = true }
 
-  map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
   map('n', '<leader>fF', ':Telescope live_grep<CR>', opts)
   map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
   map('n', '<leader>d', ':Telescope buffers<CR>', opts)

@@ -3,6 +3,17 @@ return {
         'akinsho/toggleterm.nvim',
         version = "*",
         config = function()
+            local function set_terminal_keymaps()
+                local opts = { buffer = 0 }
+                if vim.bo.filetype ~= "lazygit" then
+                    vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]], opts)
+                end
+                vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+                vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+                vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+                vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+            end
+
             require("toggleterm").setup({
                 -- Размер терминала
                 size = 20,
@@ -17,20 +28,13 @@ return {
                 -- Включить закрытие терминала при выходе из Neovim
                 close_on_exit = true,
             })
-            -- Определение функции для установки keymaps в терминальном режиме
-            function _G.set_terminal_keymaps()
-                local opts = {buffer = 0}
-                if vim.bo.filetype ~= "lazygit" then
-                    vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]], opts)
-                end
-                vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-                vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-                vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-                vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
-            end
 
             -- Автокоманда для установки keymaps при входе в терминальный режим
-            vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+            vim.api.nvim_create_autocmd('TermOpen', {
+                group = vim.api.nvim_create_augroup('ToggleTermKeymaps', { clear = true }),
+                pattern = 'term://*',
+                callback = set_terminal_keymaps,
+            })
         end
     }
 }

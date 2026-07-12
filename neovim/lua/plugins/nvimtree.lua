@@ -1,7 +1,22 @@
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
-  lazy = false,
+  cmd = {
+    "NvimTreeClipboard",
+    "NvimTreeClose",
+    "NvimTreeCollapse",
+    "NvimTreeCollapseKeepBuffers",
+    "NvimTreeFindFile",
+    "NvimTreeFindFileToggle",
+    "NvimTreeFocus",
+    "NvimTreeOpen",
+    "NvimTreeRefresh",
+    "NvimTreeResize",
+    "NvimTreeToggle",
+  },
+  keys = {
+    { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file tree" },
+  },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
@@ -66,6 +81,7 @@ return {
 
     set_tree_bg()
     vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("NvimTreeHighlights", { clear = true }),
         callback = set_tree_bg,
     })
   end,
