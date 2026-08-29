@@ -38,6 +38,31 @@ vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.signcolumn = "yes:1"
 vim.opt.foldcolumn = "0"
+
+_G.dotfiles_statuscolumn = function()
+  if vim.v.virtnum ~= 0 then
+    return ""
+  end
+
+  if vim.v.lnum == vim.fn.line(".") then
+    return vim.fn.virtcol(".")
+  end
+
+  return vim.v.lnum
+end
+
+-- Keep the sign column, right-align the value, and show the cursor's virtual
+-- column instead of the line number on the current line.
+vim.opt.statuscolumn = "%s%=%{v:lua.dotfiles_statuscolumn()} "
+
+local statuscolumn_group = vim.api.nvim_create_augroup("CursorStatuscolumn", { clear = true })
+vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+  group = statuscolumn_group,
+  callback = function()
+    vim.api.nvim__redraw({ statuscolumn = true })
+  end,
+})
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

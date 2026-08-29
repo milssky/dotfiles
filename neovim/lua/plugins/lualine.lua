@@ -58,7 +58,6 @@ return {
           lsp_status,
         },
         lualine_z = {
-          'location',
           {
             function()
               return mode_map[vim.fn.mode()] or vim.fn.mode()
