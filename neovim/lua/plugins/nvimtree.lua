@@ -43,24 +43,13 @@ return {
 
     require("nvim-tree").setup {
         view = {
-            width = 80,
+            width = 72,
+            side = "right",
             number = false,
             relativenumber = false,
             signcolumn = "no",
             float = {
-                enable = true,
-                open_win_config = function()
-                    local width = 80
-                    local height = 30
-                    return {
-                        relative = "editor",
-                        border = "rounded",
-                        width = width,
-                        height = height,
-                        row = (vim.o.lines - height) / 2,
-                        col = (vim.o.columns - width) / 2,
-                    }
-                end,
+                enable = false,
             },
         },
         filters = {

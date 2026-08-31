@@ -1,0 +1,3 @@
+WRN 2026-08-31T10:27:33.864 ?.89564    server_start:197: Failed to start server: operation not permitted: /var/folders/5c/81wwhw4d5079w2sc36rr3y6h0000gn/T/nvim.milssky/6FjcIc/nvim.89564.0
+WRN 2026-08-31T10:27:45.532 ?.89569    server_start:197: Failed to start server: operation not permitted: /var/folders/5c/81wwhw4d5079w2sc36rr3y6h0000gn/T/nvim.milssky/sJne08/nvim.89569.0
+WRN 2026-08-31T10:30:00.397 ?.90087    server_start:197: Failed to start server: operation not permitted: /var/folders/5c/81wwhw4d5079w2sc36rr3y6h0000gn/T/nvim.milssky/qIR3kJ/nvim.90087.0
